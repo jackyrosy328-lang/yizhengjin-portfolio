@@ -1313,7 +1313,8 @@ section[id] { scroll-margin-top: 84px; }
 @media (max-width: 640px) {
   .nav { top: 12px; width: calc(100% - 24px); height: 52px; padding-left: 18px; }
   .hero { padding: 120px 20px 28px; min-height: 100svh; }
-  .hero-name { font-size: clamp(88px, 24vw, 140px); }
+  .hero-name { font-size: clamp(72px, 20vw, 120px); }
+  .hero-statement { font-size: clamp(18px, 5vw, 22px); }
   .hero-foot { flex-direction: column; align-items: flex-start; gap: 18px; padding-top: 56px; }
   .scroll-cue { display: none; }
   .hero-actions { gap: 20px; }
@@ -1350,7 +1351,7 @@ section[id] { scroll-margin-top: 84px; }
   .film-frame { max-width: 320px; margin: 0 auto; }
 
   .contact { padding: 110px 0; }
-  .contact-title { font-size: 76px; }
+  .contact-title { font-size: clamp(48px, 12vw, 76px); }
   .contact-mail { font-size: 21px; gap: 10px; }
   .contact-links { gap: 18px; margin-top: 48px; }
 
@@ -1366,6 +1367,41 @@ section[id] { scroll-margin-top: 84px; }
   .phone-shell { width: min(320px, 100%); border-width: 7px; border-radius: 38px; }
   .case-body { margin-top: 40px; }
   .reflection { padding-left: 18px; }
+
+  /* —— 桌面端 demo 在手机上改成海报 + 全屏入口 —— */
+  .demo-wrap:not(.is-phone) .browser-frame {
+    position: relative;
+    min-height: 240px;
+    border-radius: 14px;
+    background:
+      linear-gradient(135deg, rgba(20, 20, 30, 0.92), rgba(40, 40, 60, 0.92)),
+      radial-gradient(circle at 30% 20%, rgba(120, 130, 255, 0.35), transparent 60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
+  .demo-wrap:not(.is-phone) .browser-frame iframe { display: none; }
+  .demo-wrap:not(.is-phone) .browser-frame::before {
+    content: "移动端请全屏体验完整工作流";
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .demo-wrap:not(.is-phone) .demo-foot {
+    justify-content: center;
+    margin-top: 14px;
+  }
+  .btn-ghost { padding: 14px 22px; font-size: 13px; }
+
+  /* —— 触摸目标 —— */
+  .chip { min-height: 40px; padding: 9px 16px; font-size: 13px; }
+  .nav-menu { width: 48px; height: 48px; }
+  .case-bar button { min-height: 44px; }
+  .btn, .live-btn { min-height: 48px; }
+  a, button { touch-action: manipulation; }
 }
 
 @media (prefers-reduced-motion: reduce) {
