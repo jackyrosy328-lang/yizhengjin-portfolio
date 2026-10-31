@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伊峥瑾 · 产品 / AI / 生活</title>
+<meta name="description" content="伊峥瑾的个人网站。AI 产品、复杂系统与生活观察。把模糊的诉求，拆成能跑起来的产品。">
+<meta name="theme-color" content="#3B3D52">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="sky" id="sky" aria-hidden="true">
+  <div class="sky-layer sky-0"></div>
+  <div class="sky-layer sky-1"></div>
+  <div class="sky-layer sky-2"></div>
+  <div class="sky-layer sky-3"></div>
+  <div class="sky-layer sky-4"></div>
+  <div class="sky-layer sky-5"></div>
+  <div class="sky-sun" id="skySun"></div>
+  <div class="sky-moon" id="skyMoon"></div>
+  <div class="sky-stars" id="skyStars"></div>
+  <div class="sky-clouds-wrap" id="skyCloudsWrap">
+    <div class="sky-clouds shade"></div>
+    <div class="sky-clouds" id="skyClouds"></div>
+    <div class="sky-puffs"></div>
+  </div>
+  <canvas class="sky-canvas" id="skyCanvas" width="1196" height="1358"></canvas>
+  <div class="sky-warm" id="skyWarm" style="--warm-o: 0.4697041049977073;"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav scrolled" id="nav">
+  <a class="nav-brand" href="#top" aria-label="回到顶部">
+    <span class="nav-name">伊峥瑾</span>
+    <span class="nav-en">Yizhengjin</span>
+  </a>
+  <nav class="nav-links" aria-label="主导航">
+    <a href="#work" data-nav="work" class="">作品</a>
+    <a href="#proof" data-nav="proof" class="">经历</a>
+    <a href="#about" data-nav="about" class="is-active">关于</a>
+    <a href="#life" data-nav="life" class="">生活</a>
+    <a href="#contact" data-nav="contact" class="">联系</a>
+  </nav>
+  <button class="nav-menu" id="navMenu" aria-label="打开菜单" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#work">作品</a>
+  <a href="#proof">证据</a>
+  <a href="#about">关于</a>
+  <a href="#life">生活</a>
+  <a href="#contact">联系</a>
+</div>
+
+<main id="top">
+
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow reveal in" style="transition-delay: 0ms;">PORTFOLIO · 2026 · WUHAN</p>
+      <h1 class="hero-name reveal in" data-delay="1" style="transition-delay: 90ms;">Hi～<div style="font-size: 130px;">我是伊峥瑾</div></h1>
+      <p class="hero-latin reveal in" data-delay="2" style="transition-delay: 180ms;">YIZHENGJIN</p>
+      <p class="hero-statement reveal in" data-delay="3" style="transition-delay: 270ms;">把模糊的诉求，<br>拆成能跑起来的产品。</p>
+      <p class="hero-sub reveal in" data-delay="4" style="transition-delay: 360ms;">AI 产品 &nbsp;/&nbsp; 复杂系统 &nbsp;/&nbsp; 生活观察者</p>
+      <div class="hero-actions reveal in" data-delay="5" style="transition-delay: 450ms;">
+        <a class="btn btn-light" href="#work"><span class="dot"></span>看作品</a>
+        <a class="link-underline" href="#about">关于我 <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="hero-foot reveal in" data-delay="6" style="transition-delay: 540ms;">
+      <div class="hero-meta">
+        <span class="meta-k">现在</span>
+        <span>中南财经政法大学 · 硕士在读</span>
+      </div>
+      <div class="hero-meta">
+        <span class="meta-k">最近</span>
+        <span>石墨文档 · 产品实习生（2026.06—10）</span>
+      </div>
+      <a class="scroll-cue" href="#work" aria-label="向下滚动">
+        <span>SCROLL</span>
+        <span class="scroll-line"></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section work" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="label reveal in"><span>01</span> SELECTED WORK</p>
+          <h2 class="display reveal in">作品</h2>
+        </div>
+        <p class="section-intro reveal in">四个项目，四种把想法变成东西的方式。<br>点开卡片，看完整的判断过程，也可以直接上手玩。</p>
+      </div>
+
+      <div class="filters reveal in" role="group" aria-label="项目筛选">
+        <button class="chip is-active" data-filter="all">全部 <span>4</span></button>
+        <button class="chip" data-filter="ai">AI 产品 <span>2</span></button>
+        <button class="chip" data-filter="visual">视觉实验 <span>1</span></button>
+        <button class="chip" data-filter="tool">自建工具 <span>1</span></button>
+      </div>
+
+      <div class="work-grid" id="workGrid">
+
+        <article class="card card-lg reveal in" data-project="workshop" data-cat="ai" tabindex="0" role="button" aria-label="打开 AI 产品合伙人工坊案例">
+          <div class="card-media">
+            <img src="assets/img/workshop-agents.webp" alt="AI 产品合伙人工坊门户：五类 Agent 与工作流程" loading="lazy">
+          </div>
+          <div class="card-shade"></div>
+          <div class="card-top">
+            <span class="card-index">01 / 2026</span>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">AI 产品合伙人工坊</h3>
+            <p class="card-line">输入一个硬件命题，五类 Agent 产出可追溯的产品定义包。</p>
+            <div class="card-tags">
+              <span>Multi-Agent</span><span>产品定义</span><span>证据分级</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-sm reveal in" data-project="butler" data-cat="ai" tabindex="0" role="button" aria-label="打开小组作业 AI 管家案例">
+          <div class="card-media">
+            <img src="assets/img/butler-home.webp" alt="小组作业 AI 管家的手机端首页" loading="lazy">
+          </div>
+          <div class="card-shade"></div>
+          <div class="card-top">
+            <span class="card-index">02 / 2026</span>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">小组作业 AI 管家</h3>
+            <p class="card-line">把“谁做什么、什么时候交”从群聊里捞出来。</p>
+            <div class="card-tags">
+              <span>小程序</span><span>LLM 工作流</span><span>0→1</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-sm reveal in" data-project="comic" data-cat="visual" tabindex="0" role="button" aria-label="打开 AI 漫剧案例">
+          <div class="card-media">
+            <img src="assets/img/comic-cover.webp" alt="AI 漫剧《林间除妖》主角凌珩" loading="lazy">
+          </div>
+          <div class="card-shade"></div>
+          <div class="card-top">
+            <span class="card-index">03 / 2026</span>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">AI 漫剧<br>《林间除妖》</h3>
+            <p class="card-line">一个人，把一段小说做成能看的剧。</p>
+            <div class="card-tags">
+              <span>AIGC</span><span>叙事</span><span>视觉一致性</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-lg reveal in" data-project="exam" data-cat="tool" tabindex="0" role="button" aria-label="打开行测练习系统案例">
+          <div class="card-media">
+            <img src="assets/img/exam-cover.webp" alt="行测练习系统首页" loading="lazy">
+          </div>
+          <div class="card-shade"></div>
+          <div class="card-top">
+            <span class="card-index">04 / 2026</span>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">行测练习系统</h3>
+            <p class="card-line">给自己搭一个会记错、也会提醒你别再错的练习系统。</p>
+            <div class="card-tags">
+              <span>独立开发</span><span>数据</span><span>自学工具</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="proof" id="proof">
+    <div class="wrap">
+      <div class="proof-head">
+        <p class="label reveal in"><span>02</span> EVIDENCE</p>
+        <h2 class="display proof-title reveal in">能力不是形容词，<br>是证据。</h2>
+        <p class="proof-intro reveal in">我不太擅长说“有较强的沟通能力”。<br>下面这些数字，是我更愿意拿出来的东西。</p>
+      </div>
+
+      <div class="metric-grid">
+        <div class="metric reveal in">
+          <div class="metric-num"><span data-count="200">200</span><em>万</em></div>
+          <p class="metric-label">为公司节约成本</p>
+          <p class="metric-src">云南建投 · 项目经营数据模型</p>
+        </div>
+        <div class="metric reveal in">
+          <div class="metric-num"><span data-count="60">60</span><em>%</em></div>
+          <p class="metric-label">API 调用成本下降</p>
+          <p class="metric-src">小组作业 AI 管家 · 模板优先策略</p>
+        </div>
+        <div class="metric reveal in">
+          <div class="metric-num"><span data-count="150">150</span><em>+</em></div>
+          <p class="metric-label">标准化测试样张</p>
+          <p class="metric-src">石墨文档 PPT 首发 · UAT 体系</p>
+        </div>
+        <div class="metric reveal in">
+          <div class="metric-num"><span data-count="6">6</span><em>端</em></div>
+          <p class="metric-label">交互一致性矩阵</p>
+          <p class="metric-src">石墨文档 PPT · 竞品与跨端交互</p>
+        </div>
+        <div class="metric reveal in">
+          <div class="metric-num"><span data-count="5">5</span><em>类</em></div>
+          <p class="metric-label">协作 Agent 角色</p>
+          <p class="metric-src">AI 产品合伙人工坊 · 多 Agent</p>
+        </div>
+        <div class="metric reveal in">
+          <div class="metric-num"><span data-count="10">10</span><em>+</em></div>
+          <p class="metric-label">合同谈判与签订</p>
+          <p class="metric-src">云南建投 · 全生命周期管理</p>
+        </div>
+      </div>
+
+      <p class="proof-note reveal in">数字来自项目复盘与交付记录。它们不代表全部，但至少可以说明：我把事情做完了。</p>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-left">
+        <p class="label reveal in"><span>03</span> ABOUT</p>
+        <h2 class="display reveal in">一条<br>不那么直的路</h2>
+        <figure class="about-portrait reveal in">
+          <img src="assets/img/portrait-about.webp" alt="伊峥瑾在城市天台">
+          <span class="about-seal" aria-hidden="true">伊</span>
+        </figure>
+      </div>
+
+      <div class="about-right">
+        <p class="about-lead reveal in">我做过三件看起来不相关的事：在企业里核成本，在咨询里拆组织，在 AI 里搭工作流。它们教会我同一件事——把模糊的东西，变成别人能执行的节点。</p>
+
+        <div class="lenses">
+          <div class="lens reveal in">
+            <span class="lens-k">现场</span>
+            <p>两年工程造价与成本合约管理，让我习惯先看数字，也要结合现场实际。</p>
+          </div>
+          <div class="lens reveal in">
+            <span class="lens-k">结构</span>
+            <p>咨询项目里，我把模糊的人才诉求拆成可执行、可交付的工作节点。</p>
+          </div>
+          <div class="lens reveal in">
+            <span class="lens-k">产品</span>
+            <p>现在，我用 AI 和产品，把这些节点变成能跑起来、能被验证的东西。</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="t-item reveal in">
+            <span class="t-year">2017 — 2021</span>
+            <h3 class="t-title">云南大学 · 国际商务</h3>
+            <p class="t-meta">市场调查国家三等奖 / 体育舞蹈省运会第一 / 奖学金&nbsp;/&nbsp;优秀毕业生</p>
+          </div>
+          <div class="t-item reveal in">
+            <span class="t-year">2023.07 — 2025.09</span>
+            <h3 class="t-title">云南建投 · 计划合约部</h3>
+            <p class="t-meta">成本、合约、数据台账；节约成本约 200 万</p>
+          </div>
+          <div class="t-item reveal in">
+            <span class="t-year">2025.09 — 2027.06</span>
+            <h3 class="t-title">中南财经政法大学 · 硕士</h3>
+            <p class="t-meta">营销管理与电子商务；研一课程均分 90+</p>
+          </div>
+          <div class="t-item reveal in">
+            <span class="t-year">2025.10 — 2026.04</span>
+            <h3 class="t-title">中智咨询 · 助理咨询顾问</h3>
+            <p class="t-meta">2个人才管理项目、2个行业研究项目；5 大模块、10+ 工作阶段</p>
+          </div>
+          <div class="t-item reveal in">
+            <span class="t-year">2026.06 — 2026.10</span>
+            <h3 class="t-title">石墨文档 · 产品实习生</h3>
+            <p class="t-meta">首发版本完整PRD、Jira项目管理、三件套全量测试样张和用例、2个从0-1专项工具</p>
+          </div>
+          <div class="t-item is-now reveal in">
+            <span class="t-year">NOW</span>
+            <h3 class="t-title">继续做 AI 产品</h3>
+            <p class="t-meta">找一群愿意把事做深的人，一起做点有意思的东西。</p>
+          </div>
+        </div>
+
+        <div class="daily-grid reveal in" aria-label="日常照片">
+          <figure><img src="assets/img/daily-1.webp" alt="冰箱前的自拍" loading="lazy"></figure>
+          <figure><img src="assets/img/daily-2.webp" alt="背着帆布包的自拍" loading="lazy"></figure>
+          <figure><img src="assets/img/daily-3.webp" alt="日常碎片拼图" loading="lazy"></figure>
+          <figure><img src="assets/img/daily-4.webp" alt="生活记录拼图" loading="lazy"></figure>
+          <p class="daily-note">不工作的时候，我也长这样。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="life" id="life">
+    <div class="wrap">
+      <div class="section-head life-head">
+        <div>
+          <p class="label reveal in"><span>04</span> OFF THE CLOCK</p>
+          <h2 class="display reveal in">工作之外</h2>
+        </div>
+        <p class="section-intro reveal in">生活不是简历的反面。<br>它是我练习好奇心、耐心和身体的地方。</p>
+      </div>
+
+      <div class="life-grid">
+        <article class="life-card reveal in">
+          <div class="life-photo">
+            <img src="assets/img/life-tennis.webp" alt="网球场上的照片" loading="lazy">
+          </div>
+          <div class="life-copy">
+            <span class="life-k">网球</span>
+            <p>大学网球社副社长。喜欢它的一点：每一分，只能靠下一拍解决。</p>
+          </div>
+        </article>
+
+        <article class="life-card reveal in">
+          <div class="life-photo is-doc">
+            <img src="assets/img/life-dance.webp" alt="云南省第十五届运动会体育舞蹈比赛获奖证书" loading="lazy">
+          </div>
+          <div class="life-copy">
+            <span class="life-k">体育舞蹈</span>
+            <p>云南省第十五届运动会（大学组）体育舞蹈比赛第一名。身体也需要被精确训练。</p>
+          </div>
+        </article>
+
+        <article class="life-card reveal in">
+          <div class="life-photo">
+            <img src="assets/img/life-travel.webp" alt="山顶风景照" loading="lazy">
+          </div>
+          <div class="life-copy">
+            <span class="life-k">旅行</span>
+            <p>在陌生城市里走很久，观察别人怎么生活，也重新看自己。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner">
+      <p class="label reveal in"><span>05</span> CONTACT</p>
+      <h2 class="contact-title reveal in">联系我～</h2>
+      <p class="contact-lead reveal in">不管是产品机会、AI 项目，还是单纯想交换一段有意思的经历，都欢迎。</p>
+      <a class="contact-mail reveal in" href="mailto:849806602@qq.com">849806602@qq.com <span aria-hidden="true">↗</span></a>
+      <div class="contact-links reveal in">
+        <a href="assets/yizhengjin-resume.pdf" target="_blank" rel="noopener">下载简历 PDF</a>
+        <a href="#work">再看一遍作品</a>
+        <span class="contact-loc">武汉 · 中国</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 伊峥瑾</span>
+    <span>Designed &amp; built with care</span>
+    <a href="#top">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<div class="case" id="case" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="caseTitle" tabindex="-1">
+  <div class="case-bar">
+    <button class="case-back" id="caseBack">← 返回作品</button>
+    <span class="case-count" id="caseCount">CASE 03 / 04</span>
+    <button class="case-close" id="caseClose" aria-label="关闭案例">关闭 <span aria-hidden="true">✕</span></button>
+    <span class="case-progress" id="caseProgress" aria-hidden="true" style="transform: scaleX(0);"></span>
+  </div>
+  <div class="case-scroll" id="caseScroll">
+    <div class="case-content" id="caseContent"></div>
+  </div>
+</div>
+
+<script src="assets/js/sky-gl.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+
+</body></html>
